@@ -29,12 +29,12 @@ public class FoodSpawner : MonoBehaviour
         switch (WhatToSpawn)
         {
             case 1:
-                foodGridPosition = new Vector3(Random.Range(0, 19), Random.Range(0, 19));
+                foodGridPosition = new Vector3(Random.Range(1, 19), Random.Range(1, 19));
                 Instantiate(Food, foodGridPosition, Quaternion.identity);
                 break;
 
             case 2:
-                foodGridPosition = new Vector3(Random.Range(0, 19), Random.Range(0, 19));
+                foodGridPosition = new Vector3(Random.Range(1, 19), Random.Range(1, 19));
                 Instantiate(Burner, foodGridPosition, Quaternion.identity);
                 break;
 
