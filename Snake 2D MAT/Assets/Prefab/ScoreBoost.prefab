@@ -94,7 +94,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -109,12 +109,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.16, y: 0.16499999}
-      - {x: -0.17, y: 0.155}
-      - {x: -0.17, y: -0.16499999}
-      - {x: 0.17, y: -0.16499999}
-      - {x: 0.17, y: 0.145}
-      - {x: 0.14999999, y: 0.16499999}
+    - - {x: -0.11735868, y: 0.14480148}
+      - {x: -0.13745809, y: 0.120213464}
+      - {x: -0.13857993, y: -0.13694671}
+      - {x: 0.12511437, y: -0.13470207}
+      - {x: 0.13409162, y: 0.11245808}
+      - {x: 0.10287003, y: 0.14255717}
 --- !u!114 &999853011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,3 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176f84275a5164d47a890f91d3f65696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreManager: {fileID: 0}

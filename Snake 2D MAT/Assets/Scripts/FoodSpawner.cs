@@ -8,6 +8,7 @@ public class FoodSpawner : MonoBehaviour
     public GameObject Burner;
     private Vector3 foodGridPosition;
     private int WhatToSpawn;
+    private int BodySize;
 
     private void Awake()
     {
@@ -20,24 +21,28 @@ public class FoodSpawner : MonoBehaviour
         SpawnObject();
     }
 
-
     public void SpawnObject()
     {
-        WhatToSpawn = Random.Range(1, 2);
+        WhatToSpawn = Random.Range(1, 3);
 
-
-        switch (WhatToSpawn)
+        if(BodySize < 6)
         {
-            case 1:
-                foodGridPosition = new Vector3(Random.Range(1, 19), Random.Range(1, 19));
-                Instantiate(Food, foodGridPosition, Quaternion.identity);
-                break;
+            foodGridPosition = new Vector3(Random.Range(1, 19), Random.Range(1, 19));
+            Instantiate(Food, foodGridPosition, Quaternion.identity);
+        }
+        else {
+            switch (WhatToSpawn)
+            {
+                case 1:
+                    foodGridPosition = new Vector3(Random.Range(1, 19), Random.Range(1, 19));
+                    Instantiate(Food, foodGridPosition, Quaternion.identity);
+                    break;
 
-            case 2:
-                foodGridPosition = new Vector3(Random.Range(1, 19), Random.Range(1, 19));
-                Instantiate(Burner, foodGridPosition, Quaternion.identity);
-                break;
-
+                case 2:
+                    foodGridPosition = new Vector3(Random.Range(1, 19), Random.Range(1, 19));
+                    Instantiate(Burner, foodGridPosition, Quaternion.identity);
+                    break;
+            }
         }
     }
 }

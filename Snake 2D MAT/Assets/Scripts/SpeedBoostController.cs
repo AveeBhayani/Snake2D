@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpeedBoostController : MonoBehaviour
 {
+    public PlayerController PlayerController;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)
@@ -11,6 +12,7 @@ public class SpeedBoostController : MonoBehaviour
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             SoundManager.Instance.Play(Sounds.BoostPickUp);
             Destroy(gameObject);
+            playerController.SpeedBoostActive();
         }
     }
 

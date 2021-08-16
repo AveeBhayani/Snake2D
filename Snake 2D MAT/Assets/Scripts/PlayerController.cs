@@ -10,15 +10,21 @@ public class PlayerController : MonoBehaviour
     private Vector2Int gridMoveDirection;
     private List<Transform> Segments;
 
+    private float Multiplier;
+    private float MultiplierTime;
+    private bool Boosting;
     public Transform BodyPrefab;
 
     void Awake()
     {
         gridPosition = new Vector2Int(10, 10);
-        gridMoveTimerMax = 0.5f;
+        gridMoveTimerMax = .4f;
         gridMoveTimer = gridMoveTimerMax;
         gridMoveDirection = new Vector2Int(1, 0);
-        
+        Multiplier = 1;
+        MultiplierTime = 0f;
+        Boosting = false;
+
     }
 
     private void Start()
@@ -30,7 +36,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMovement();
-        //HandleGridMovement();
+
+        if (Boosting)
+        {
+            MultiplierTime += Time.deltaTime;
+            if (MultiplierTime >= 15f)
+            {
+                Multiplier = 1;
+                MultiplierTime = 0f;
+                Boosting = false;
+            }
+        }
     }
     private void PlayerMovement()
     {
@@ -74,7 +90,7 @@ public class PlayerController : MonoBehaviour
  
     private void FixedUpdate()
     {
-        gridMoveTimer += Time.deltaTime;
+        gridMoveTimer += Time.deltaTime * Multiplier;
         if(gridMoveTimer >= gridMoveTimerMax)
         {
             gridPosition += gridMoveDirection;
@@ -105,6 +121,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public Vector2Int ScreenWrap(Vector2Int gridPosition)
+
     {
         if(gridPosition.x < 0)
         {
@@ -126,5 +143,11 @@ public class PlayerController : MonoBehaviour
             gridPosition.y = 0;
         }
         return gridPosition;
+    }
+
+    public void SpeedBoostActive()
+    {
+        Multiplier = 2f;
+        Boosting = true;
     }
 }
