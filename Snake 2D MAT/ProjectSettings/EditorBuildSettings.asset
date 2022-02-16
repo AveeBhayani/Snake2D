@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Snake2D.unity
     guid: 90a64faceb3601548bf2ddb976ece7c2
+  - enabled: 1
+    path: Assets/Scenes/Gameplay.unity
+    guid: 7e0cd8a36f1282d409cd52a3d4c7b523
   m_configObjects: {}

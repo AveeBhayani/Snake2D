@@ -12,9 +12,9 @@ public class BoostSpawner : MonoBehaviour
 
     private void Awake()
     {
-        ShieldBoost = GameObject.Find("ShieldBoost");
+        /*ShieldBoost = GameObject.Find("ShieldBoost");
         ScoreBoost = GameObject.Find("ScoreBoost");
-        SpeedBoost = GameObject.Find("SpeedBoost");
+        SpeedBoost = GameObject.Find("SpeedBoost");*/
     }
 
     // Update is called once per frame

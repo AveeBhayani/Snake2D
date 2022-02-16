@@ -8,10 +8,16 @@ public class ScoreManager : MonoBehaviour
 {
     private TextMeshProUGUI ScoreText;
     private int score;
-    public FoodSpawner foodspawner;
     private int Multiplier;
     private float MultiplierTime;
     private bool Boosting;
+
+    private LevelGrid levelgrid;
+
+    public void Setup(LevelGrid levelGrid)
+    {
+        this.levelgrid = levelGrid;
+    }
 
     private void Awake()
     {
@@ -42,9 +48,7 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore(int increment)
     {
         score += increment * Multiplier;
-        RefreshUI();
-        foodspawner.SpawnObject();
-        
+        RefreshUI();       
     }
 
     private void RefreshUI()

@@ -7,14 +7,14 @@ public class PauseManager : MonoBehaviour
     public GameObject PauseScreen;
     public void OnClickPause()
     {
-        SoundManager.Instance.Play(Sounds.ButtonClick);
+        //SoundManager.Instance.Play(Sounds.ButtonClick);
         PauseScreen.SetActive(true);
         PauseGame();
     }
 
     public void OnClickResume()
     {
-        SoundManager.Instance.Play(Sounds.ButtonClick);
+        //SoundManager.Instance.Play(Sounds.ButtonClick);
         PauseScreen.SetActive(false);
         ResumeGame();
     }
